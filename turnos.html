@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Turnos | Psi Online</title>
+  <title>Turnos | PSICO.ONLINE.AR</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="/"><span class="brand-top">PSI.ONLINE</span><span class="brand-ext">.AR</span></a>
+      <a class="brand" href="/"><span class="brand-top">PSICO.ONLINE</span><span class="brand-ext">.AR</span></a>
       <nav class="main-nav" aria-label="Principal">
         <a href="index.html#servicios">Servicios</a>
         <a href="index.html#equipo">Equipo</a>
@@ -25,23 +25,21 @@
 
   <main class="section">
     <div class="container narrow">
-      <h1 class="center">Solicitar turno</h1>
+      <h1 class="center">Solicitar turno (online)</h1>
       <p class="muted center">Completá el formulario. Te contactaremos para coordinar día y horario.</p>
 
-      <!-- Netlify Forms: enable in site settings after deploying on Netlify -->
+      <!-- Netlify Forms -->
       <form name="turnos" method="POST" data-netlify="true" netlify-honeypot="extra" action="/thank-you.html" class="form-card" id="turnosForm">
         <input type="hidden" name="form-name" value="turnos">
-        <p class="hidden">
-          <label>Extra <input name="extra"></label>
-        </p>
+        <p class="hidden"><label>Extra <input name="extra"></label></p>
 
         <div class="field">
           <label for="profesional">Profesional</label>
           <select id="profesional" name="profesional" required>
             <option value="" disabled selected>Elegí una opción</option>
-            <option value="Lic. Nombre A">Lic. Nombre A</option>
-            <option value="Lic. Nombre B">Lic. Nombre B</option>
-            <option value="Indistinto">Indistinto</option>
+            <option>Lic. Rodrigo Adorno Suárez (MP 48221)</option>
+            <option>Lic. Natalia Sierralta (MP 48375)</option>
+            <option>Indistinto</option>
           </select>
         </div>
 
@@ -76,16 +74,6 @@
           </select>
         </div>
 
-        <div class="field">
-          <label for="modalidad">Modalidad</label>
-          <select id="modalidad" name="modalidad" required>
-            <option value="" disabled selected>Elegí una opción</option>
-            <option>Online</option>
-            <option>Presencial</option>
-            <option>Indistinto</option>
-          </select>
-        </div>
-
         <div class="consent">
           <input type="checkbox" id="consent" required>
           <label for="consent">Acepto la <a href="privacy.html">política de privacidad</a> y el tratamiento de mis datos.</label>
@@ -101,7 +89,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="brand brand--footer"><span class="brand-top">PSI.ONLINE</span><span class="brand-ext">.AR</span></div>
+        <div class="brand brand--footer"><span class="brand-top">PSICO.ONLINE</span><span class="brand-ext">.AR</span></div>
         <p class="muted">No uses este formulario para urgencias. Contactá a emergencias.</p>
       </div>
       <nav aria-label="Secundaria" class="footer-nav">
