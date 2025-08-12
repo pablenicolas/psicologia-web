@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turnos | Psi Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-top">PSI.ONLINE</span><span class="brand-ext">.AR</span></a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#equipo">Equipo</a>
+        <a href="index.html#faq">Preguntas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container narrow">
+      <h1 class="center">Solicitar turno</h1>
+      <p class="muted center">Completá el formulario. Te contactaremos para coordinar día y horario.</p>
+
+      <!-- Netlify Forms: enable in site settings after deploying on Netlify -->
+      <form name="turnos" method="POST" data-netlify="true" netlify-honeypot="extra" action="/thank-you.html" class="form-card" id="turnosForm">
+        <input type="hidden" name="form-name" value="turnos">
+        <p class="hidden">
+          <label>Extra <input name="extra"></label>
+        </p>
+
+        <div class="field">
+          <label for="profesional">Profesional</label>
+          <select id="profesional" name="profesional" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option value="Lic. Nombre A">Lic. Nombre A</option>
+            <option value="Lic. Nombre B">Lic. Nombre B</option>
+            <option value="Indistinto">Indistinto</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="nombre">Nombre y apellido</label>
+          <input type="text" id="nombre" name="nombre" required autocomplete="name" placeholder="Tu nombre...">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="tu@mail.com">
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="+54 9 ...">
+        </div>
+
+        <div class="field">
+          <label for="motivo">Motivo de consulta <span class="optional">(opcional)</span></label>
+          <textarea id="motivo" name="motivo" rows="4" placeholder="Podés contar brevemente tu motivo o dejarlo en blanco."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="disponibilidad">Disponibilidad horaria</label>
+          <select id="disponibilidad" name="disponibilidad" required>
+            <option value="" disabled selected>Elegí una franja</option>
+            <option>Mañana (08:00–12:00)</option>
+            <option>Tarde (12:00–18:00)</option>
+            <option>Noche (18:00–21:00)</option>
+            <option>Fin de semana</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="modalidad">Modalidad</label>
+          <select id="modalidad" name="modalidad" required>
+            <option value="" disabled selected>Elegí una opción</option>
+            <option>Online</option>
+            <option>Presencial</option>
+            <option>Indistinto</option>
+          </select>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" required>
+          <label for="consent">Acepto la <a href="privacy.html">política de privacidad</a> y el tratamiento de mis datos.</label>
+        </div>
+
+        <div class="center">
+          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer"><span class="brand-top">PSI.ONLINE</span><span class="brand-ext">.AR</span></div>
+        <p class="muted">No uses este formulario para urgencias. Contactá a emergencias.</p>
+      </div>
+      <nav aria-label="Secundaria" class="footer-nav">
+        <a href="privacy.html">Privacidad</a>
+        <a href="index.html#equipo">Equipo</a>
+      </nav>
+      <div class="footer-cta">
+        <a class="btn btn-primary" href="index.html">Inicio</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
