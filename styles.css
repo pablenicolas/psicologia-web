@@ -85,7 +85,7 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
     margin-bottom: 14px;
 }
 .rodrigo-photo {
-    object-position: 65% center;
+    object-position: 55% center;
 }
 
 .form-card{background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);}
