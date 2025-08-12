@@ -76,12 +76,13 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
 
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .pro{background:var(--white);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center}
-.pro-photo{
-  width: clamp(140px, 18vw, 220px);
-  height: clamp(140px, 18vw, 220px);
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 14px;
+.pro-photo {
+    width: clamp(140px, 18vw, 220px);
+    height: clamp(140px, 18vw, 220px);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 55% center; /* mover levemente hacia la derecha */
+    margin-bottom: 14px;
 }
 .form-card{background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);}
 .field{display:flex;flex-direction:column;margin-bottom:14px}
