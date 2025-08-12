@@ -76,8 +76,13 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
 
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .pro{background:var(--white);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center}
-.pro-photo{width:120px;height:120px;border-radius:100%;object-fit:cover;margin-bottom:10px}
-
+.pro-photo{
+  width: clamp(140px, 18vw, 220px);
+  height: clamp(140px, 18vw, 220px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
 .form-card{background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);}
 .field{display:flex;flex-direction:column;margin-bottom:14px}
 label{font-weight:600;color:var(--ink)}
