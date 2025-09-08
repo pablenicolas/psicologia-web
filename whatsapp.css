@@ -1,0 +1,48 @@
+/* ===== Botón de WhatsApp: estilo y animación ===== */
+:root {
+  /* Si ya tenés una paleta, podés alinear este color con tu primario */
+  --wa-brand: #4A7BD9;         /* azul frío por defecto */
+  --wa-contrast: #ffffff;      /* texto por defecto */
+  --wa-hover-bg: #E6F0FF;      /* fondo en hover (inversión) */
+}
+
+.btn-turno {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  border-radius: .9rem;
+
+  /* Capa visual por encima de .btn base */
+  background: var(--wa-brand);
+  color: var(--wa-contrast);
+  border: 2px solid var(--wa-brand);
+  padding: .9rem 1.2rem;
+
+  transition:
+    background .18s ease,
+    color .18s ease,
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.btn-turno:hover {
+  background: var(--wa-hover-bg);
+  color: var(--wa-brand);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 24px rgba(2, 6, 23, .12);
+}
+
+.btn-turno:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(2, 6, 23, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-turno { transition: none; }
+  .btn-turno:hover { transform: none; box-shadow: none; }
+}
