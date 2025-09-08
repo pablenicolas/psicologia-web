@@ -21,19 +21,23 @@
   <script defer src="script.js"></script>
   <!-- Lógica del botón de WhatsApp -->
   <script defer src="whatsapp.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body>
   <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/"><span class="brand-top">PSICO.ONLINE</span><span class="brand-ext">.AR</span></a>
-    <nav class="main-nav" aria-label="Principal">
-      <a href="#servicios">Servicios</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#faq">Preguntas</a>
-      <!-- 🔴 Eliminado el botón "Sacar turno" de la nav -->
-    </nav>
-  </div>
-</header>
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-top">PSICO.ONLINE</span><span class="brand-ext">.AR</span></a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#faq">Preguntas</a>
+        <!-- 🔴 Eliminado el botón "Sacar turno" de la nav -->
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="hero">
@@ -44,7 +48,8 @@
           <p class="lead">Trabajamos en <strong>sesiones online</strong> desde cualquier parte del mundo y <strong>presencial</strong> desde Mar del Plata.</p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="turnos.html">Sacar turno</a>
+            <!-- ✅ Este botón ahora baja hasta Equipo -->
+            <a class="btn btn-primary" href="#equipo">Sacar turno</a>
             <a class="btn btn-ghost" href="#equipo">Conocer al equipo</a>
           </div>
 
@@ -174,9 +179,7 @@
         <a href="turnos.html">Turnos</a>
         <a href="#equipo">Equipo</a>
       </nav>
-      <div class="footer-cta">
-        <a class="btn btn-primary" href="turnos.html">Sacar turno</a>
-      </div>
+      <!-- 🔴 Eliminado el botón "Sacar turno" del footer -->
     </div>
   </footer>
 
