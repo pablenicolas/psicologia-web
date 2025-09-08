@@ -12,11 +12,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
+  <!-- Tu hoja de estilos principal -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Estilos del botón de WhatsApp -->
+  <link rel="stylesheet" href="whatsapp.css">
 
-  <!-- Script -->
+  <!-- Tu script principal -->
   <script defer src="script.js"></script>
+  <!-- Lógica del botón de WhatsApp -->
+  <script defer src="whatsapp.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -32,7 +36,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -70,7 +73,6 @@
       </div>
     </section>
 
-    <!-- SERVICIOS -->
     <section id="servicios" class="section">
       <div class="container">
         <h2>Servicios</h2>
@@ -79,7 +81,7 @@
             <h3>Terapia individual</h3>
             <p>Proceso psicoterapeútico orientado a objetivos y a una escucha de la singularidad de cada persona.</p>
           </article>
-          <article class="svc">
+          <article class="svc"> 
             <h3>Orientación familiar</h3>
             <p>Dirigida a brindar estrategias para las distintas etapas vitales — Terapia de pareja.</p>
           </article>
@@ -88,10 +90,10 @@
             <p>Talleres breves, espacios de formación y supervisión. Recursos descargables.</p>
           </article>
         </div>
+        <!-- 🔴 Eliminado el botón "Reservar un turno" -->
       </div>
     </section>
 
-    <!-- EQUIPO -->
     <section id="equipo" class="section section-contrast">
       <div class="container">
         <h2>Equipo</h2>
@@ -99,15 +101,19 @@
           <article class="pro">
             <img src="assets/rodrigo.png" alt="Lic. Rodrigo Adorno Suárez" class="pro-photo rodrigo-photo">
             <h3>Rodrigo Adorno Suárez</h3>
-            <p class="bio">
+            <p>
               Lic. en Psicología (MP 48221). Trabajo desde un <strong>enfoque psicoanalítico</strong>, atendiendo adolescentes, adultos, familias y parejas, ayudando a explorar los procesos internos individuales y las problemáticas vinculares.
             </p>
-            <p class="bio">
+            <p>
               ✨ Cuento con formación en psicoanálisis vincular y teoría sistémica relacional, actualmente también soy docente en la Universidad Nacional de Mar del Plata, Argentina.
             </p>
-            <a class="btn btn-turno"
-               href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-               target="_blank" aria-label="Pedir turno con Rodrigo">
+
+            <a
+              class="btn btn-turno"
+              href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
+              data-wa="5492284300552"
+              data-prof="Rodrigo"
+              aria-label="Pedir turno con Rodrigo por WhatsApp">
               PEDIR TURNO
             </a>
           </article>
@@ -115,18 +121,22 @@
           <article class="pro">
             <img src="assets/natalia.png" alt="Lic. Natalia Sierralta" class="pro-photo">
             <h3>Natalia Sierralta</h3>
-            <p class="bio">
+            <p>
               Lic. en Psicología (MP 48375). Modelo integrativo acompañando adolescentes y adultos en sus procesos adaptativos frente a <strong>enfermedades crónicas, ansiedad, depresión y duelo</strong>.
             </p>
-            <p class="bio">
+            <p>
               Apoyo a familiares de pacientes que se encuentran atravesando enfermedades crónicas.
             </p>
-            <p class="bio">
+            <p>
               ✨ Formación en cuidados paliativos y Psicooncología.
             </p>
-            <a class="btn btn-turno"
-               href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-               target="_blank" aria-label="Pedir turno con Natalia">
+
+            <a
+              class="btn btn-turno"
+              href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
+              data-wa="5492233121110"
+              data-prof="Natalia"
+              aria-label="Pedir turno con Natalia por WhatsApp">
               PEDIR TURNO
             </a>
           </article>
@@ -134,7 +144,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="section">
       <div class="container">
         <h2>Preguntas frecuentes</h2>
@@ -165,7 +174,12 @@
         <a href="turnos.html">Turnos</a>
         <a href="#equipo">Equipo</a>
       </nav>
+      <div class="footer-cta">
+        <a class="btn btn-primary" href="turnos.html">Sacar turno</a>
+      </div>
     </div>
   </footer>
+
+  <!-- 🔴 Eliminado el botón flotante de WhatsApp -->
 </body>
 </html>
