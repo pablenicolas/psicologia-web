@@ -1,12 +1,11 @@
-
 /*
-Color palette tuned to IG pieces:
---bg: #C6D0E0
---bg-2: #E4E8F1
---ink: #0E2338
---text: #2D3A4A
---muted: #8E98A8
---accent: #9EA7B6
+Color palette inspired by the provided Instagram post:
+--bg: #C6D0E0  (soft desaturated blue)
+--bg-2: #E4E8F1 (lighter panel blue)
+--ink: #0E2338  (very dark blue for strong text)
+--text: #2D3A4A (body text)
+--muted: #8E98A8 (muted text)
+--accent: #9EA7B6 (soft gray-blue underline)
 --white: #FFFFFF
 */
 
@@ -75,17 +74,25 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
 .svc{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
 
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.pro{background:var(--white);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center}
-.pro-photo {
-    width: clamp(140px, 18vw, 220px);
-    height: clamp(140px, 18vw, 220px);
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 55% center; /* mover levemente hacia la derecha */
-    margin-bottom: 14px;
+
+/* Card de profesional: ahora es flex column para alinear el botón al fondo */
+.pro{
+  background:var(--white);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:center;
+
+  display:flex;              /* 👈 nuevo */
+  flex-direction:column;     /* 👈 nuevo */
+  justify-content:space-between; /* 👈 ayuda a repartir contenido */
 }
-.rodrigo-photo {
-    object-position: 55% center;
+.pro-photo{width:120px;height:120px;border-radius:100%;object-fit:cover;margin-bottom:10px}
+
+/* Empuja el botón "PEDIR TURNO" al final y lo centra horizontalmente */
+.pro .btn-turno{
+  margin-top:auto;     /* 👈 hace que el botón quede abajo */
+  align-self:center;   /* 👈 centrado horizontal dentro de la card */
 }
 
 .form-card{background:var(--white);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow);}
@@ -112,13 +119,9 @@ textarea{resize:vertical}
 
 .whatsapp-fab{
   position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:#25D366; /* WhatsApp green */
-  color:#fff; /* white glyph */
-  box-shadow:var(--shadow);
-  text-decoration:none;font-size:0;
+  display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;
+  box-shadow:var(--shadow);text-decoration:none;font-size:0
 }
-.whatsapp-fab:hover{filter:brightness(0.95)}
 
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
