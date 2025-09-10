@@ -25,7 +25,10 @@ Color palette inspired by the provided Instagram post:
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
+
+/* ✅ EDITADO: body relativo para la marca de agua */
 body{
+  position: relative; /* <-- importante para el ::before */
   font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   color:var(--text);
   background: radial-gradient(16px 16px at 20% 80%, rgba(255,255,255,.25) 1px, transparent 1px) repeat,
@@ -34,6 +37,21 @@ body{
   background-size: 22px 22px, 18px 18px, auto;
   line-height:1.6;
 }
+
+/* ✅ NUEVO: marca de agua con logo centrado y sutil
+   Suponiendo que `logo-fondo.png` está en la MISMA carpeta que index.html y styles.css */
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url('logo-fondo.png') no-repeat center center;
+  background-size: 600px auto; /* ajustá el tamaño del logo si querés */
+  opacity:.05;                  /* más/menos visible: 0.03–0.12 */
+  pointer-events:none;
+  z-index:0;                    /* por encima del fondo del body */
+}
+/* Asegura que el contenido quede por encima de la marca de agua */
+body > * { position: relative; z-index: 1; }
 
 .container{max-width:var(--container);margin-inline:auto;padding:0 20px}
 .narrow{max-width:680px}
@@ -47,7 +65,16 @@ body{
   z-index:10;
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:70px}
-.brand{font-weight:700;text-decoration:none;color:var(--ink);letter-spacing:.8px}
+
+/* ✅ EDITADO: marca con sans-serif y espaciado mayor */
+.brand,
+.brand--footer{
+  font-family: sans-serif;
+  letter-spacing: 2.5px; /* antes: .8px */
+  font-weight:700;
+  text-decoration:none;
+  color:var(--ink);
+}
 .brand-top{opacity:.9}
 .brand-ext{opacity:.7; margin-left:1px}
 
@@ -75,19 +102,36 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
 
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 
-/* Card de profesional: flex column + centrado */
+/* Card de profesional */
 .pro{
   background:var(--white);
   padding:18px;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-
   display:flex;
   flex-direction:column;
-  align-items:center;       /* 👈 centra todo el contenido horizontal */
+  align-items:center; /* centra horizontal */
   text-align:center;
+  height:100%;
 }
-.pro-photo{width:120px;height:120px;border-radius:100%;object-fit:cover;margin-bottom:10px}
+
+/* ✅ EDITADO: foto un poco más grande y responsive */
+.pro-photo{
+  width: clamp(140px, 18vw, 220px);
+  height: clamp(140px, 18vw, 220px);
+  border-radius:100%;
+  object-fit:cover;
+  object-position:center;
+  margin-bottom:12px;
+}
+
+/* ✅ NUEVO: mejorar lectura de bios y balancear columnas */
+.pro p{
+  max-width: 58ch;      /* ancho óptimo de lectura */
+  text-align: left;     /* texto largo queda más prolijo a la izquierda */
+  line-height: 1.65;
+  margin: 8px auto;
+}
 
 /* Empuja el botón "PEDIR TURNO" al final y centrado */
 .pro .btn-turno{
@@ -117,11 +161,8 @@ textarea{resize:vertical}
 .footer-nav a{display:block;margin:6px 0;color:var(--ink);text-decoration:none}
 .muted{color:var(--muted)}
 
-.whatsapp-fab{
-  position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;background:#25D366;color:#fff;
-  box-shadow:var(--shadow);text-decoration:none;font-size:0
-}
+/* ✅ si existe en el HTML, lo ocultamos por ahora */
+.whatsapp-fab{ display:none !important; }
 
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
