@@ -46,7 +46,7 @@ body::before{
   inset:0;
   background: url('logo-fondo.png') no-repeat center center;
   background-size: 600px auto; /* ajustá el tamaño del logo si querés */
-  opacity:.05;                  /* más/menos visible: 0.03–0.12 */
+  opacity:1;                  /* más/menos visible: 0.03–0.12 */
   pointer-events:none;
   z-index:0;                    /* por encima del fondo del body */
 }
