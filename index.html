@@ -14,16 +14,32 @@
 
   <!-- Tu hoja de estilos principal -->
   <link rel="stylesheet" href="styles.css">
-  <!-- Estilos del botón de WhatsApp -->
-  <link rel="stylesheet" href="whatsapp.css">
 
-  <!-- Tu script principal -->
+  <!-- Script -->
   <script defer src="script.js"></script>
-  <!-- Lógica del botón de WhatsApp -->
-  <script defer src="whatsapp.js"></script>
 
   <style>
     html { scroll-behavior: smooth; }
+
+    /* 🔵 Marca PSICO.ONLINE.AR arriba y en footer con sans-serif + espaciado */
+    .brand, .brand--footer {
+      font-family: sans-serif;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+    }
+
+    /* 🔵 Logo de fondo como marca de agua */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('logo-fondo.png') no-repeat center center;
+      background-size: 600px auto; /* ajustá el tamaño del logo */
+      opacity: 0.05; /* transparencia */
+      pointer-events: none; /* no bloquea clics */
+      z-index: -1; /* siempre detrás de todo */
+    }
   </style>
 </head>
 <body>
@@ -45,11 +61,11 @@
         <div class="hero-copy">
           <p class="eyebrow">Salud mental</p>
           <h1>Atención psicológica</h1>
-          <p class="lead">Brindamos <strong>sesiones online</strong> desde cualquier parte del mundo o <strong>presencial</strong> desde Mar del Plata.<br> <i>Ofrecemos un espacio con material psicoeducativo descargable y diferentes talleres</i></p>
-	
+          <p class="lead">Brindamos <strong>sesiones online</strong> desde cualquier parte del mundo o <strong>presencial</strong> desde Mar del Plata.<br>
+            <i>Ofrecemos un espacio con material psicoeducativo descargable y diferentes talleres</i>
+          </p>
 
           <div class="cta-row">
-            <!-- ✅ Este botón ahora baja hasta Equipo -->
             <a class="btn btn-primary" href="#equipo">Sacar turno</a>
             <a class="btn btn-ghost" href="#equipo">Conocer al equipo</a>
           </div>
@@ -68,7 +84,7 @@
           <div class="card">
             <p class="card-kicker">Enfoque</p>
             <h3>Basado en evidencia</h3>
-            <p><strong>Cognitivo-conductual, sistémico</strong> con entrevistas de admisión adaptadas a las necesidades de cada caso particular.</p>
+            <p><strong>Cognitivo-conductual, sistémico</strong> con entrevistas de admisión adaptadas a las necesidades de cada caso particular.</p>
           </div>
           <div class="card">
             <p class="card-kicker">Modalidad</p>
@@ -87,7 +103,7 @@
             <h3>Terapia individual</h3>
             <p>Proceso psicoterapeútico orientado a objetivos y a una escucha de la singularidad de cada persona.</p>
           </article>
-          <article class="svc"> 
+          <article class="svc">
             <h3>Orientación familiar</h3>
             <p>Dirigida a brindar estrategias para las distintas etapas vitales / Terapia de pareja.</p>
           </article>
@@ -96,7 +112,6 @@
             <p>Talleres breves, espacios de formación y supervisión. Recursos descargables.</p>
           </article>
         </div>
-        <!-- 🔴 Eliminado el botón "Reservar un turno" -->
       </div>
     </section>
 
@@ -113,13 +128,10 @@
             <p>
               ✨ Cuento con formación en psicoanálisis vincular y teoría sistémica relacional, actualmente también soy docente en la Universidad Nacional de Mar del Plata, Argentina.
             </p>
-
             <a
               class="btn btn-turno"
               href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-              data-wa="5492284300552"
-              data-prof="Rodrigo"
-              aria-label="Pedir turno con Rodrigo por WhatsApp">
+              target="_blank" aria-label="Pedir turno con Rodrigo">
               PEDIR TURNO
             </a>
           </article>
@@ -129,19 +141,14 @@
             <h3>Natalia Sierralta</h3>
             <p>
               Lic. en Psicología (MP 48375). Trabajo desde el modelo integrativo, atendiendo adolescentes y adultos en sus procesos adaptativos frente a enfermedades crónicas, ansiedad, depresión y duelo. Brindo apoyo a familiares de pacientes que se encuentran atravesando enfermedades crónicas.
-</strong>
             </p>
-            
             <p>
-              ✨ Cuento con formación en cuidados paliativos, psicooncología y Acompañamiento en procesos de duelo.
+              ✨ Cuento con formación en cuidados paliativos, psicooncología y Acompañamiento en procesos de duelo.
             </p>
-
             <a
               class="btn btn-turno"
               href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-              data-wa="5492233121110"
-              data-prof="Natalia"
-              aria-label="Pedir turno con Natalia por WhatsApp">
+              target="_blank" aria-label="Pedir turno con Natalia">
               PEDIR TURNO
             </a>
           </article>
@@ -179,10 +186,7 @@
         <a href="turnos.html">Turnos</a>
         <a href="#equipo">Equipo</a>
       </nav>
-      <!-- 🔴 Eliminado el botón "Sacar turno" del footer -->
     </div>
   </footer>
-
-  <!-- 🔴 Eliminado el botón flotante de WhatsApp -->
 </body>
 </html>
