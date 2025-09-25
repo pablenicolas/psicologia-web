@@ -20,25 +20,11 @@
 
   <style>
     html { scroll-behavior: smooth; }
-
-    /* 🔵 Marca PSICO.ONLINE.AR arriba y en footer con sans-serif + espaciado */
+    /* Marca PSICO.ONLINE.AR arriba y en footer con sans-serif + espaciado */
     .brand, .brand--footer {
       font-family: sans-serif;
       letter-spacing: 2.5px;
       font-weight: 700;
-    }
-
-    /* 🔵 Logo de fondo como marca de agua */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('logo-fondo.png') no-repeat center center;
-      background-size: 600px auto; /* ajustá el tamaño del logo */
-      opacity: 0.05; /* transparencia */
-      pointer-events: none; /* no bloquea clics */
-      z-index: -1; /* siempre detrás de todo */
     }
   </style>
 </head>
@@ -50,7 +36,6 @@
         <a href="#servicios">Servicios</a>
         <a href="#equipo">Equipo</a>
         <a href="#faq">Preguntas</a>
-        <!-- 🔴 Eliminado el botón "Sacar turno" de la nav -->
       </nav>
     </div>
   </header>
@@ -61,15 +46,14 @@
         <div class="hero-copy">
           <p class="eyebrow">Salud mental</p>
           <h1>Atención psicológica</h1>
-          <p class="lead">Brindamos <strong>sesiones online</strong> desde cualquier parte del mundo o <strong>presencial</strong> desde Mar del Plata.<br>
+          <p class="lead">
+            Brindamos <strong>sesiones online</strong> desde cualquier parte del mundo o <strong>presencial</strong> desde Mar del Plata.<br>
             <i>Ofrecemos un espacio con material psicoeducativo descargable y diferentes talleres</i>
           </p>
-
           <div class="cta-row">
             <a class="btn btn-primary" href="#equipo">Sacar turno</a>
             <a class="btn btn-ghost" href="#equipo">Conocer al equipo</a>
           </div>
-
           <div class="disclaimer">
             * Si estás atravesando una urgencia, comunicate con tu sistema de salud local o llamá a un número de emergencias.
             <ul style="margin:8px 0 0 18px">
@@ -119,38 +103,40 @@
       <div class="container">
         <h2>Equipo</h2>
         <div class="team">
+          <!-- Rodrigo -->
           <article class="pro">
             <img src="assets/rodrigo.png" alt="Lic. Rodrigo Adorno Suárez" class="pro-photo rodrigo-photo">
             <h3>Rodrigo Adorno Suárez</h3>
-            <p>
-              Lic. en Psicología (MP 48221). Trabajo desde un <strong>enfoque psicoanalítico</strong>, atendiendo adolescentes, adultos, familias y parejas, ayudando a explorar los procesos internos individuales y las problemáticas vinculares.
-            </p>
-            <p>
-              ✨ Cuento con formación en psicoanálisis vincular y teoría sistémica relacional, actualmente también soy docente en la Universidad Nacional de Mar del Plata, Argentina.
-            </p>
-            <a
-              class="btn btn-turno"
-              href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-              target="_blank" aria-label="Pedir turno con Rodrigo">
-              PEDIR TURNO
-            </a>
+            <p>Lic. en Psicología (MP 48221). Trabajo desde un <strong>enfoque psicoanalítico</strong>, atendiendo adolescentes, adultos, familias y parejas.</p>
+            <p>✨ Formación en psicoanálisis vincular y teoría sistémica relacional. Docente en la Universidad Nacional de Mar del Plata.</p>
+            <a class="btn btn-turno" href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A" target="_blank">PEDIR TURNO</a>
           </article>
 
+          <!-- Natalia -->
           <article class="pro">
             <img src="assets/natalia.png" alt="Lic. Natalia Sierralta" class="pro-photo">
             <h3>Natalia Sierralta</h3>
-            <p>
-              Lic. en Psicología (MP 48375). Trabajo desde el modelo integrativo, atendiendo adolescentes y adultos en sus procesos adaptativos frente a enfermedades crónicas, ansiedad, depresión y duelo. Brindo apoyo a familiares de pacientes que se encuentran atravesando enfermedades crónicas.
-            </p>
-            <p>
-              ✨ Cuento con formación en cuidados paliativos, psicooncología y Acompañamiento en procesos de duelo.
-            </p>
-            <a
-              class="btn btn-turno"
-              href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A"
-              target="_blank" aria-label="Pedir turno con Natalia">
-              PEDIR TURNO
-            </a>
+            <p>Lic. en Psicología (MP 48375). Modelo integrativo con adolescentes y adultos frente a enfermedades crónicas, ansiedad, depresión y duelo.</p>
+            <p>✨ Formación en cuidados paliativos, psicooncología y acompañamiento en procesos de duelo.</p>
+            <a class="btn btn-turno" href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A" target="_blank">PEDIR TURNO</a>
+          </article>
+
+          <!-- Rodrigo duplicado -->
+          <article class="pro">
+            <img src="assets/rodrigo.png" alt="Lic. Rodrigo Adorno Suárez" class="pro-photo rodrigo-photo">
+            <h3>Rodrigo Adorno Suárez</h3>
+            <p>Lic. en Psicología (MP 48221). Trabajo desde un <strong>enfoque psicoanalítico</strong>, atendiendo adolescentes, adultos, familias y parejas.</p>
+            <p>✨ Formación en psicoanálisis vincular y teoría sistémica relacional. Docente en la Universidad Nacional de Mar del Plata.</p>
+            <a class="btn btn-turno" href="https://wa.me/5492284300552?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A" target="_blank">PEDIR TURNO</a>
+          </article>
+
+          <!-- Natalia duplicada -->
+          <article class="pro">
+            <img src="assets/natalia.png" alt="Lic. Natalia Sierralta" class="pro-photo">
+            <h3>Natalia Sierralta</h3>
+            <p>Lic. en Psicología (MP 48375). Modelo integrativo con adolescentes y adultos frente a enfermedades crónicas, ansiedad, depresión y duelo.</p>
+            <p>✨ Formación en cuidados paliativos, psicooncología y acompañamiento en procesos de duelo.</p>
+            <a class="btn btn-turno" href="https://wa.me/5492233121110?text=Nombre:%0AEdad:%0AMotivo%20de%20consulta:%0ADisponibilidad%20horaria:%0A" target="_blank">PEDIR TURNO</a>
           </article>
         </div>
       </div>
