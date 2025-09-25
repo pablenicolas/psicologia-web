@@ -26,7 +26,7 @@ Color palette inspired by the provided Instagram post:
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 
-/* ✅ EDITADO: body relativo para la marca de agua */
+/* ✅ body relativo para la marca de agua */
 body{
   position: relative; /* <-- importante para el ::before */
   font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -38,17 +38,16 @@ body{
   line-height:1.6;
 }
 
-/* ✅ NUEVO: marca de agua con logo centrado y sutil
-   Suponiendo que `logo-fondo.png` está en la MISMA carpeta que index.html y styles.css */
+/* ✅ Marca de agua centrada y sutil (archivo en /assets) */
 body::before{
   content:"";
   position:absolute;
   inset:0;
-  background: url('logo-fondo.png') no-repeat center center;
-  background-size: 600px auto; /* ajustá el tamaño del logo si querés */
-  opacity:1;                  /* más/menos visible: 0.03–0.12 */
+  background: url('assets/logo-fondo.png') no-repeat center center;
+  background-size: 600px auto;   /* ajustá el tamaño del logo si querés */
+  opacity:.05;                   /* más/menos visible: 0.03–0.12 */
   pointer-events:none;
-  z-index:0;                    /* por encima del fondo del body */
+  z-index:0;                     /* por encima del fondo del body */
 }
 /* Asegura que el contenido quede por encima de la marca de agua */
 body > * { position: relative; z-index: 1; }
@@ -66,7 +65,7 @@ body > * { position: relative; z-index: 1; }
 }
 .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:70px}
 
-/* ✅ EDITADO: marca con sans-serif y espaciado mayor */
+/* ✅ marca con sans-serif y espaciado mayor */
 .brand,
 .brand--footer{
   font-family: sans-serif;
@@ -115,7 +114,7 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
   height:100%;
 }
 
-/* ✅ EDITADO: foto un poco más grande y responsive */
+/* Foto más grande y responsive */
 .pro-photo{
   width: clamp(140px, 18vw, 220px);
   height: clamp(140px, 18vw, 220px);
@@ -125,7 +124,7 @@ h2::after{content:"";display:block;width:160px;height:6px;background:var(--accen
   margin-bottom:12px;
 }
 
-/* ✅ NUEVO: mejorar lectura de bios y balancear columnas */
+/* Mejor lectura de bios y balance de columnas */
 .pro p{
   max-width: 58ch;      /* ancho óptimo de lectura */
   text-align: left;     /* texto largo queda más prolijo a la izquierda */
@@ -149,10 +148,73 @@ input[type=text],input[type=email],input[type=tel],select,textarea{
 textarea{resize:vertical}
 .consent{display:flex;gap:10px;align-items:flex-start;margin:12px 0}
 
+/* Botones base */
 .btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;border:1px solid transparent;font-weight:600;cursor:pointer}
 .btn-primary{background:var(--ink);color:#fff}
 .btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
 .btn:hover{opacity:.95}
+
+/* =========================
+   Botón PEDIR TURNO (azul)
+   ========================= */
+.btn.btn-turno,
+.pro .btn-turno{
+  background: linear-gradient(180deg, #2D6CDF, #1E4FBF);
+  color:#fff;
+  border:0;
+  box-shadow:0 8px 18px rgba(30,79,191,.35);
+  transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Efecto “shimmer” suave */
+.btn-turno::after{
+  content:"";
+  position:absolute;
+  top:0; left:-150%;
+  width:120%;
+  height:100%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.25) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: turnoShimmer 2.4s infinite;
+  pointer-events:none;
+}
+
+/* Hover/active */
+.btn-turno:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(30,79,191,.42);
+  filter: brightness(1.02);
+}
+.btn-turno:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(30,79,191,.35);
+}
+
+/* Anillo de foco accesible */
+.btn-turno:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45,108,223,.25), 0 8px 18px rgba(30,79,191,.35);
+}
+
+/* Keyframes del brillo */
+@keyframes turnoShimmer{
+  0%   { left:-150%; }
+  60%  { left:130%; }
+  100% { left:130%; }
+}
+
+/* Respeta usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce){
+  .btn-turno::after{ animation: none; }
+  .btn-turno,
+  .btn-turno:hover,
+  .btn-turno:active{
+    transition: none;
+    transform: none;
+  }
+}
 
 .disclaimer{font-size:.85rem;color:var(--muted);margin-top:10px}
 .site-footer{padding:28px 0;background:rgba(0,0,0,.03);border-top:1px solid rgba(255,255,255,.6)}
@@ -161,7 +223,7 @@ textarea{resize:vertical}
 .footer-nav a{display:block;margin:6px 0;color:var(--ink);text-decoration:none}
 .muted{color:var(--muted)}
 
-/* ✅ si existe en el HTML, lo ocultamos por ahora */
+/* si existe en el HTML, lo ocultamos por ahora */
 .whatsapp-fab{ display:none !important; }
 
 @media (max-width:900px){
